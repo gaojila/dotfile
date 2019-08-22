@@ -1,0 +1,79 @@
+# 切换邮箱和发送邮件的默认快捷键都是 y，容易误发邮件
+# macro index,pager "c" "<refresh><change-folder>=inbox<return>"
+macro index,pager "c" "<change-folder>?<toggle-mailboxes>"
+
+# bounce(打回)很少用到，改成 lables 标签的切换快捷键
+# macro index,pager "b" "<change-folder>?\
+# 	<change-dir><kill-line>~/Maildir/labels<enter>\
+# 	<enter-mask><kill-line>!^\..<enter>"
+
+# 逗号','改成「记事本」的切换快捷键
+	macro index "\," "<change-folder>?\
+		<change-dir><kill-line>~/Maildir/notebook<enter><enter><enter>"
+
+# 通知 fetchmail 立刻检查新邮件
+macro index,pager B "<shell-escape>fetchmail > /dev/null<enter>" 'retrieve mail from POP server'
+
+# 快速保存附件
+macro attach s "<save-entry><kill-line>~/下载/Mailannex<enter>"
+
+# 不要使用多行排版、否则有问题(添加任务时选择了其它邮件)
+macro index,pager T "<pipe-message>~/.config/neomutt/mutt-todotxt<enter><enter-command>set nopipe_decode<enter><enter-command>set wait_key<enter><pipe-message>~/.mutt/mutt-todotxt-it<enter><enter-command>set nowait_key<enter><enter-command>set pipe_decode<enter>" "Task"
+
+# 添加会议邀请到 Todotxt
+macro index,pager M "<enter-command>set wait_key<enter><pipe-message>~/.config/neomutt/mutt-todotxt-cal<enter><enter-command>set nowait_key<enter>" "Metting"
+
+# 添加到通讯录
+macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
+
+# 避免切换折叠后导致底部留白的问题
+macro index Z "<collapse-all><current-bottom>"
+
+#  显示url
+macro pager u "<enter-command>set pipe_decode = yes<enter><pipe-message>urlview<enter><enter-command>set pipe_decode = no<enter>" "view URLs"
+
+
+# 邮件备注
+#macro index,pager "<Return>" "\
+#          :set pipe_decode=no<enter>\
+#          :set wait_key=no<enter>\
+#          <pipe-message>~/.mutt/mutt-note<enter>\
+#          :set wait_key=yes<enter>\
+#          :set pipe_decode=yes<enter>\
+#          :set <enter>" "Note"
+#
+# 一句话的备注，可以使用 X-Label 功能
+
+# 显示当前邮箱里曾经被我回复过的邮件(~Q)，包括我的回复(~P)
+macro index "<F5>" "<limit>~Q | ~P<enter>"
+# 显示当前邮箱里最近两天的邮件
+macro index "<F6>" "<limit>~d `date -d '1 day ago' +%d/%m`-<enter>"
+# 显示当前邮箱里最近一周的邮件
+macro index "<F7>" "<limit>~d `date -d '1 week ago' +%d/%m`-<enter>"
+# 显示当前邮箱里最近一月的邮件
+macro index "<F8>" "<limit>~d `date -d '1 month ago' +%d/%m`-<enter>"
+# http://wiki.mutt.org/?UserStory/SearchingMail
+# http://www.zsh.org/mla/users/2007/msg01187.html
+# mu-0.9.7 with wrapper
+macro index,pager \` "<enter-command>set my_cmd = \`~/.config/neomutt/mutt-grep\`<enter><enter-command>push \$my_cmd<enter>" "global find"
+
+##
+# v1.8.0 开始内置支持 X-Label 了(默认快捷键 Y)
+##
+# # x-labels
+# # TODO inherit
+# macro index,pager x "\
+# <enter-command>set my_cmd=\`~/.mutt/mutt-xlabel\`<enter>\
+# <enter-command>push \$my_cmd<enter>\
+# <enter-command>set editor=\"~/.mutt/mutt-xlabel-it \\\"\$my_lab\\\"\"<enter>\
+# <edit>\
+# <enter-command>set delete=yes<enter>\
+# <sync-mailbox><next-undeleted>\
+# <enter-command>set delete=ask-yes<enter>\
+# <enter-command>set editor=\"vim -c 'set ft=mail.markdown'\"<enter>" "create label"
+####
+# html view
+macro attach V "<pipe-message>cat > /tmp/.mutt.html; x-www-browser /tmp/.mutt.html<enter>"
+
+# vi:noet:
+

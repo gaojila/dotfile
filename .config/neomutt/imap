@@ -1,0 +1,53 @@
+# 信箱类型
+set mbox_type="Maildir"
+# 信箱目录
+set folder="$HOME/Maildir"
+# 默认使用的信箱
+set spoolfile="$HOME/Maildir/inbox"
+# 用于创建新文件夹时使用
+set mbox="$HOME/Maildir/seen"  #Seen box
+# 设置回复邮箱
+set record="$HOME/Maildir/sent"  #Sent box
+# 设置编辑邮件的临时目录
+set tmpdir="$HOME/Maildir/draft"
+# 保存草稿的位置
+set postponed="$HOME/Maildir/postponed"
+# 邮箱列表 {{{
+#mailboxes !
+#source $folder".mailboxes"
+### mailboxes =personal
+### mailboxes =debian-zh
+### mailboxes =shlug
+### mailboxes =szlug
+### mailboxes =ubuntu-zh
+### mailboxes =python-cn
+### mailboxes =vim-zh
+### mailboxes =fcitx-dev
+# }}}
+
+# TODO 改用 ~/.mutt/qgc.rb --subscribes 实现
+# 邮件列表选项 {{{
+# debian
+subscribe debian-news@lists.debian.org
+subscribe debian-announce@lists.debian.org
+subscribe debian-boot@lists.debian.org
+subscribe debian-mentors@lists.debian.org
+subscribe debian-qa@lists.debian.org
+subscribe debian-www@lists.debian.org
+subscribe debian-l10n-chinese@lists.debian.org
+subscribe debian-chinese-gb@lists.debian.org
+subscribe debian-chinese-big5@lists.debian.org
+subscribe \d*@bugs.debian.org
+# other
+subscribe vidalia-users@lists.vidalia-project.net
+subscribe awesome-devel@naquadah.org
+subscribe openrays@openrays.org
+subscribe wikizh-l@lists.wikimedia.org
+subscribe directfb-users@directfb.org
+subscribe kde-china@kde.org
+subscribe ubuntu-zh@lists.ubuntu.com
+subscribe fcitx-dev@googlegroups.com
+subscribe shlug@googlegroups.com
+subscribe szlug@googlegroups.com
+subscribe python-cn@googlegroups.com
+# }}}

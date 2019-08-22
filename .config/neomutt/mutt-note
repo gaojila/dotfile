@@ -1,0 +1,13 @@
+#!/bin/bash
+
+FOLDER="/home/luwenzheng/notes/"
+EDITOR='vim'
+EXT=".mkd"
+
+if [ "$ACTION" == "" ]; then
+    # <pipe-message> 编辑 note 文件
+    MID=`/bin/grep -i '^message-id' $* | sed -e 's/.*<\(.*\)>/\1/g'`
+    TARGET=${FOLDER}${MID}${EXT}
+    vim - "+edit ${TARGET}" "+set ft=markdown"
+fi
+

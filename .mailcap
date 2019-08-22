@@ -1,0 +1,35 @@
+text/html; w3m -T text/html %s; copiousoutput; nametemplate=%s.html; needsterminal;
+text/markdown; pandoc -f markdown -t html %s | elinks -dump 1 -dump-color-mode 2 -dump-width 196; copiousoutput; nametemplate=%s.html; needsterminal;
+
+text/calendar; ~/.config/neomutt/mutt-calendar-view.rb %s; copiousoutput;
+
+application/ms-tnef; tnef -w %s; copiousoutput;
+
+application/x-diff-gzip; atool -l %s; copiousoutput;
+application/x-gtar; atool -l %s; copiousoutput;
+application/x-tar; atool -l %s; copiousoutput;
+application/x-tar-gz; atool -l %s; copiousoutput;
+application/x-rar-compressed; atool -l %s; copiousoutput;
+application/x-zip-compressed; atool -l %s; copiousoutput;
+application/x-gzip; atool -F tar+gzip -l %s; copiousoutput;
+application/zip; atool -l %s; copiousoutput;
+
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; et %s; description="Microsoft Excel 2007+";
+application/vnd.ms-excel.sheet.macroenabled.12; et %s; description="Microsoft Excel";
+application/vnd.ms-excel; et %s; description="Microsoft Excel";
+application/ms-excel; et %s; description="Microsoft Excel";
+application/msexcel; et %s; description="Microsoft Excel";
+
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; wps %s; description="Microsoft Word 2007+";
+application/vnd.ms-word; wps %s; description="Microsoft Word";
+application/msword; wps %s; description="Microsoft Word";
+application/word; wps %s; description="Microsoft Word";
+
+application/vnd.openxmlformats-officedocument.presentationml.presentation; wpp %s; description="Microsoft PowerPoint 2007+";
+application/vnd.ms-powerpoint; wpp %s; description="Microsoft PowerPoint";
+
+application/x-pdf; okular %s > /dev/null 2>&1;
+application/pdf; okular %s > /dev/null 2>&1;
+
+text/*; view '%s'; edit=nvim '%s'; compose=nvim '%s'; needsterminal
+image/*; qiv -f  %s;
