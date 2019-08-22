@@ -186,6 +186,7 @@ bindsym $mod+F9 exec --no-startup-id ~/.config/i3/mpdmenu
 bindsym $mod+Pause exec --no-startup-id /home/luwenzheng/.config/rofi-power/rofi-power "i3-msg exit"
 
 #Autostart
+exec --no-startup-id fcitx
 exec --no-startup-id copyq
 exec --no-startup-id fbxkb
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
