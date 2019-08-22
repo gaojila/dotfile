@@ -1,0 +1,6 @@
+plugins=(
+    git
+    git-open
+    zsh-autosuggestions
+    vi-mode
+)
