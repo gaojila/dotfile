@@ -198,6 +198,11 @@
         let g:tmux_navigator_save_on_switch = 2
         let g:tmux_navigator_disable_when_zoomed = 1
 
+- repo: iamcco/mathjax-support-for-mkdp
+  depends: vim-markdown
+- repo: iamcco/markdown-preview.vim
+  depends: vim-markdown
+
 - repo: tpope/vim-markdown
   on_ft: markdown
   hook_add: |

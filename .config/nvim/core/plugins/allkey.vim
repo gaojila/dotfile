@@ -294,7 +294,7 @@ endif
 "         nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-multiblock-a)
 "         nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
 " endif
-
+" tmux
 if dein#tap('vim-tmux-navigator')
     let g:tmux_navigator_no_mappings = 1
     let g:tmux_navigator_save_on_switch = 2
@@ -304,4 +304,17 @@ if dein#tap('vim-tmux-navigator')
     nnoremap <silent> <c-k> :TmuxNavigateUpcr><
     nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
     nnoremap <silent> <c-> :TmuxNavigatePrevious<cr>
+endif
+" markdown
+if dein#tap('markdown-preview.vim')
+    let uname = system('uname -s')
+    if uname == "Darwin\n"
+	    let g:mkdp_path_to_chrome = "/Applications/Googl\\ Chrome.app/Contents/MacOS/Google\\ Chrome"
+    else
+	    let g:mkdp_path_to_chrome = '/usr/bin/google-chrome-stable %U'
+    endif
+    nmap <silent> <F7> <Plug>MarkdownPreview
+    imap <silent> <F7> <Plug>MarkdownPreview
+    nmap <silent> <F8> <Plug>StopMarkdownPreview
+    imap <silent> <F8> <Plug>StopMarkdownPreview
 endif
