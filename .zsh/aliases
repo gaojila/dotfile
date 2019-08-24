@@ -1,2 +1,3 @@
 alias vi='nvim'
-alias r='ranger'
+alias ra='ranger'
+alias fu='fzf-url'
