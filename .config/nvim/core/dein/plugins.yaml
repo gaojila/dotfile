@@ -4,14 +4,16 @@
 # StartUp Plugins{{{
 - repo: Shougo/dein.vim
 - repo: honza/vim-snippets
-
+- repo: taigacute/spaceline.vim
+- repo: bagrat/vim-buffet
+  hook_add: source $VIM_PATH/core/plugins/buffet.vim
 #}}}
 
 # Core Plugins{{{
 - repo: neoclide/coc.nvim
   merge: 0
   rev: release
-  hook_add: source  $VIMPATH/core/plugins/coc.vim
+  hook_add: source  $VIM_PATH/core/plugins/coc.vim
 # }}}
 
 
@@ -23,13 +25,9 @@
   on_cmd: Denite
   depends: vim-devicons
   hook_source: |
-        source  $VIMPATH/core/plugins/denite.vim
-        source  $VIMPATH/core/plugins/denite_menu.vim
-
-- repo: raghur/fruzzy
-  on_source: denite.nvim
-  hook_source: let g:fruzzy#sortonempty = 0
-  hook_post_update: call fruzzy#install()
+        source  $VIM_PATH/core/plugins/denite.vim
+        source  $VIM_PATH/core/plugins/denite_menu.vim
+- { repo: chemzqm/denite-git, on_source: denite.nvim }
 
 # }}}
 
@@ -41,34 +39,19 @@
 
 - repo: t9md/vim-choosewin
   on_map: { n: <Plug> }
-  hook_source: source  $VIMPATH/core/plugins/vim-choosewin.vim
+  hook_source: source  $VIM_PATH/core/plugins/vim-choosewin.vim
 
-- repo: ludovicchabant/vim-gutentags
-  if: executable('ctags')
+- repo: kizza/actionmenu.nvim
   on_path: .*
-  hook_source: source  $VIMPATH/core/plugins/vim-gutentags.vim
-
-- repo: junegunn/goyo.vim
-  on_cmd: Goyo
-  hook_source: source  $VIMPATH/core/plugins/goyo.vim
-
-- repo: junegunn/Limelight.vim
-  on_cmd: Limelight
 
 - repo: mhinz/vim-startify
   on_cmd: Startify
   depends: vim-devicons
-  hook_source: source  $VIMPATH/core/plugins/startify.vim
+  hook_source: source  $VIM_PATH/core/plugins/startify.vim
   hook_post_source: |
       function! StartifyEntryFormat()
         return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
       endfunction
-
-
-- repo: mg979/vim-visual-multi
-  on_map: { n: <C-n> }
-  hook_add: let g:VM_leader = '<Space>'
-
 - repo: junegunn/vim-easy-align
   on_ft: [vim,json,go,html,js,jsx,py,css,less,tmpl,toml,xml,sql,Dockerfile]
 
@@ -78,7 +61,6 @@
   hook_add: |
         let g:comfortable_motion_no_default_key_mappings = 1
         let g:comfortable_motion_impulse_multiplier = 1
-
 - repo: rizzatti/dash.vim
   on_map: { n: <Plug> }
   hook_add: |
@@ -88,7 +70,6 @@
         \ 'html': ['html', 'svg'],
         \ 'go' : 'Go',
         \}
-
 - repo: thinca/vim-quickrun
   on_cmd: QuickRun
   hook_add: |
@@ -98,20 +79,18 @@
             \   },
             \}
         let g:quickrun_no_default_key_mappings = 1
-
 - {repo: simnalamburt/vim-mundo , on_map: { n: <Plug> } }
 
 - {repo: tpope/vim-repeat , on_map: .* }
 
 - repo: liuchengxu/vim-which-key
   on_cmd: [Whichkey, Whichkey!]
-  hook_source: source  $VIMPATH/core/plugins/whichkey.vim
+  hook_source: source  $VIM_PATH/core/plugins/whichkey.vim
   hook_post_source: |
         call which_key#register('<Space>', 'g:which_key_map')
         call which_key#register(';', 'g:which_key_localmap')
         call which_key#register(']', 'g:which_key_rsbgmap')
         call which_key#register('[', 'g:which_key_lsbgmap')
-
 - repo: easymotion/vim-easymotion
   on_map: { n: <Plug> }
   hook_source: |
@@ -120,18 +99,16 @@
         let g:EasyMotion_keys = 'fjdkswbeoavn'
         let g:EasyMotion_smartcase = 1
         let g:EasyMotion_use_smartsign_us = 1
-
-
 # }}}
 
 # File manager{{{
 - repo: Shougo/defx.nvim
   on_cmd: Defx
-  hook_source: source  $VIMPATH/core/plugins/defx.vim
+  hook_source: source  $VIM_PATH/core/plugins/defx.vim
 
 - repo: kristijanhusak/defx-git
   on_source: defx.nvim
-  hook_source: source  $VIMPATH/core/plugins/defx-git.vim
+  hook_source: source  $VIM_PATH/core/plugins/defx-git.vim
 
 - repo: kristijanhusak/defx-icons
   on_source: defx.nvim
@@ -146,16 +123,18 @@
 - repo: junegunn/fzf.vim
   depends: fzf
   on_cmd: [Colors,Rg,Buffers]
-  hook_add: source  $VIMPATH/core/plugins/fzf.vim
+  on_func: Fzf_dev
+  hook_source: source  $VIM_PATH/core/plugins/fzf.vim
 
 # }}}
 
 # Git Plugins{{{
+- { repo: taigacute/magit.vim, on_cmd: Magit }
 
-- { repo: tyru/caw.vim, on_map: { nx: <Plug> }}
+- { repo: lambdalisue/gina.vim, on_cmd: Gina }
 
 - repo: chemzqm/vim-easygit
-  on_cmd: [Gcd, Glcd, commit, Gblame, Gstatus, Gdiff, Gbrowse, Gstatus, Gpush]
+  on_cmd: [Gcd, Glcd, Gcommit, Gblame, Gstatus, Gdiff, Gbrowse, Gstatus, Gpush]
   hook_source: let g:easygit_enable_command = 1
 
 
@@ -190,18 +169,7 @@
 
 - repo: fatih/vim-go
   on_ft: go
-  hook_source: source  $VIMPATH/core/plugins/vim-go.vim
-
-- repo: christoomey/vim-tmux-navigator
-  hook_add: |
-        let g:tmux_navigator_no_mappings = 1
-        let g:tmux_navigator_save_on_switch = 2
-        let g:tmux_navigator_disable_when_zoomed = 1
-
-- repo: iamcco/mathjax-support-for-mkdp
-  depends: vim-markdown
-- repo: iamcco/markdown-preview.vim
-  depends: vim-markdown
+  hook_source: source  $VIM_PATH/core/plugins/vim-go.vim
 
 - repo: tpope/vim-markdown
   on_ft: markdown
@@ -214,7 +182,6 @@
           \ 'js=javascript',
           \ 'go',
           \]
-
 # }}}
 
 # Coding{{{
@@ -223,19 +190,19 @@
 
 - repo: sbdchd/neoformat
   on_cmd: [Neoformat,Neoformat!]
-  hook_source: source  $VIMPATH/core/plugins/neoformat.vim
+  hook_source: source  $VIM_PATH/core/plugins/neoformat.vim
 
 - repo: Yggdroot/indentLine
   on_ft: [python,html,css,vim,javascript,jsx,javascript.jsx,vue]
-  hook_source: source $VIMPATH/core/plugins/indentline.vim
+  hook_source: source $VIM_PATH/core/plugins/indentline.vim
 
 - repo: liuchengxu/vista.vim
   on_cmd: [Vista,Vista!,Vista!!]
-  hook_source: source  $VIMPATH/core/plugins/vista.vim
+  hook_source: source  $VIM_PATH/core/plugins/vista.vim
 
 - repo: majutsushi/tagbar
   on_cmd: TagbarToggle
-  hook_source: source  $VIMPATH/core/plugins/tagbar.vim
+  hook_source: source  $VIM_PATH/core/plugins/tagbar.vim
 
 - repo: mattn/emmet-vim
   on_ft: [html,css,jsx,javascript,javascript.jsx]
@@ -251,7 +218,6 @@
             \      'extends' : 'jsx',
             \  },
         \}
-
 - repo: luochen1990/rainbow
   on_ft: [python,javascript,jsx,javascript.jsx,html,css,go,vim,toml]
   hook_source: let g:rainbow_active = 1
@@ -261,11 +227,24 @@
   hook_source: |
         call echodoc#enable()
         let g:echodoc#type = "virtual"
-
 # - repo: w0rp/ale
 #   hook_add: source ~/.config/nvim/core/plugins/vim-ale.vim
 
 # }}}
+
+# Writing{{{
+- repo: iamcco/markdown-preview.nvim
+  on_ft: [markdown,pandoc.markdown,rmd]
+  hook_post_source: 'call mkdp#util#install()'
+  hook_source: |
+      let g:mkdp_auto_start = 1
+- repo: junegunn/goyo.vim
+  on_cmd: Goyo
+  hook_source: source  $VIM_PATH/core/plugins/goyo.vim
+
+- repo: junegunn/Limelight.vim
+  on_cmd: Limelight
+#}}}
 
 # TextObjectOperator{{{
 - { repo: AndrewRadev/splitjoin.vim, on_map: { n: <Plug>Splitjoin }}
@@ -295,9 +274,3 @@
 # - repo: rhysd/vim-operator-surround
 #   depends: [vim-operator-user, vim-textobj-multiblock]
 #   on_map:  { vnx : <Plug> }
-# - repo: itchyny/lightline.vim
-#   depends: vim-devicons
-#   hook_add: source  $VIMPATH/core/plugins/lightline.vim
-# - repo: mengelbrecht/lightline-bufferline
-#   hook_add: source  $VIMPATH/core/plugins/lightline.vim
-# }}}

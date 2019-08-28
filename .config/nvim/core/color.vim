@@ -1,26 +1,3 @@
-" Theme
-
-" Enable 256 color terminal
-set t_Co=256
-
-" Enable true color
-if has('termguicolors')
-	set termguicolors
-endif
-
-set background=dark
-
-" Colorscheme settings
-" ---------------------------------------------------------
-" let g:gruvbox_filetype_hi_groups = 1
-" let g:gruvbox_plugin_hi_groups = 1
-" let g:gruvbox_transp_bg = 1
-" let g:gruvbox_italicize_strings = 0
-let g:onedark_termcolors=256
-colorscheme   onedark
-
-let g:space_vim_transp_bg = 1
-" colorscheme space_vim_theme
 
 " Vim Colors
 " ---------------------------------------------------------
@@ -28,16 +5,18 @@ hi Whitespace ctermfg=96 guifg=#725972 guibg=NONE ctermbg=NONE
 hi VertSplit  ctermfg=Black  guifg=Black
 "hi Normal guibg=NONE ctermbg=NONE
 "hi LineNr ctermbg=NONE guibg=NONE
-"hi SignColumn ctermfg=187 ctermbg=NONE guifg=#ebdbb2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi SignColumn ctermfg=187 ctermbg=NONE guifg=#ebdbb2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 highlight! link pythonSpaceError  NONE
 highlight! link pythonIndentError NONE
+" highlight NormalFloat cterm=NONE ctermfg=14 ctermbg=0 gui=NONE guifg=#93a1a1 guibg=#002931
 
 "Pmenu Colors
 " ---------------------------------------------------------
 hi PMenuSel ctermfg=252 ctermbg=106 guifg=#d0d0d0 guibg=#859900 guisp=#859900 cterm=NONE gui=NONE
 
-"coc highlight setting
+"coc setting
 " ---------------------------------------------------------
+hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
 hi default CocHighlightText  guibg=#725972 ctermbg=96
 hi CocWarningSign  ctermfg=32 ctermbg=NONE guifg=#0087d7 guibg=NONE
 
@@ -63,6 +42,20 @@ highlight def link Defx_filename_3_Unmerged Label
 " buftabline highlight
 " ---------------------------------------------------------
 highlight BufTabLineCurrent ctermbg=96 guibg=#5d4d7a
+
+" buftabline highlight
+" ---------------------------------------------------------
+highlight  gitInfoRepotitle    guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight  gitInfoHeadtitle   guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight  gitInfoUpstreamtitle  guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight  gitInfoPushtitle   guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight  gitCommitModetitle  guibg=NONE guisp=NONE gui=bold cterm=bold
+
+highlight  gitSectionsStaged guifg=#0087d7 guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight  gitSectionsUnstaged guifg=#0087d7 guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight  gitSectionsCommitMsg guifg=#0087d7 guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight  gitSectionsCommitStash  guifg=#0087d7 guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight  gitSectionsRecentCommit guifg=#0087d7 guibg=NONE guisp=NONE gui=bold cterm=bold
 
 "GetColorSynatxGroup
 " ---------------------------------------------------------
