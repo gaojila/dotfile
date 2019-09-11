@@ -1,2 +1,1 @@
 [[ -s /home/luwenzheng/.autojump/etc/profile.d/autojump.sh   ]] && source /home/luwenzheng/.autojump/etc/profile.d/autojump.sh
-VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
