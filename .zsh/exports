@@ -1,5 +1,5 @@
 export GOROOT=/usr/local/go
-export GOHOME="~/"
+export GOHOME="/home/luwenzheng"
 export GOPATH="$GOHOME/go"
 export GOCACHE="$GOHOME/.cache/go-build"
 export GOBIN=$GOPATH/bin
