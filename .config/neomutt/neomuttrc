@@ -9,9 +9,12 @@ source ~/.config/neomutt/imap                       # 使用imap服务
 # 终端的编码
 set charset="UTF-8"
 # 外发邮件使用的编码，改为由hooks智能设定
-set send_charset="utf-8"
-# 解决未经过MIME编码的信件显示为乱码的问题
-set assumed_charset="gb2312:iso-2022-jp:utf-8"
+set send_charset="UTF-8"
+# 解决没有设置字符编码的信件显示为乱码的问题
+charset-hook ^us-ascii$ GB2312
+# 解决主题为UTF-8的信件标题显示为乱码的问题
+charset-hook !UTF-8 GB2312
+set assumed_charset="GB2312"
 # 解决中文附件名为乱码的问题
 set rfc2047_parameters=yes
 # 回信时自动包含原文
@@ -19,7 +22,7 @@ set include
 # 回信时只包含原文(autoview的附件除外)
 set include_onlyfirst
 # 回信引文之前的符号
-set indent_str="> " 
+set indent_str="> "
 # 回信引文不用包含原文的信头
 set header=no
 # 采用msmtp发送邮件
@@ -147,7 +150,7 @@ set reply_regexp="^(re([\\[0-9\\]+])*|回复|答复|aw|fw):[ \t]*"
 # 别把类似主题归到一个线索中
 set strict_threads=yes
 
-# source powerline/colors/personal.neomuttrc
+# 定义自个人主题
 source powerline/powerline.neomuttrc
 source powerline/colors/muttrc.narksuckersperg
 

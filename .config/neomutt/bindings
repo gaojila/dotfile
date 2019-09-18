@@ -1,32 +1,31 @@
 # 阅读正文
-bind pager g noop
-bind pager j next-line
-bind pager k previous-line
-bind pager gg top
-bind pager G bottom
-bind pager \cd half-down
-bind pager \cu half-up
+bind pager      g        noop
+bind pager      j        next-line
+bind pager      k        previous-line
+bind pager      gg       top
+bind pager      G        bottom
+bind pager      r        group-reply
+bind pager      \cd      half-down
+bind pager      \cu      half-up
 # 浏览首页
-bind index C recall-message
-bind index g noop
-bind index gg first-entry
-bind index r       group-reply
-bind index R reply
-bind index G last-entry
-bind index \cd half-down
-bind index \cu half-up
+bind index      C        recall-message
+bind index      g        noop
+bind index      gg       first-entry
+bind index      r        group-reply
+bind index      R        reply
+bind index      G        last-entry
+bind index      \cd      half-down
+bind index      \cu      half-up
 # 编辑邮件头、命令行
-bind editor I bol
-bind editor A eol
-bind editor H backward-char
-bind editor L forward-char
+bind editor     I        bol
+bind editor     A        eol
+bind editor     H        backward-char
+bind editor     L        forward-char
 
 # 浏览通讯录时
-bind alias N search-opposite
+bind alias      N        search-opposite
 # 切换邮箱/查看目录时
-bind browser i exit
-bind browser l select-entry
-bind browser <space> select-entry
+bind browser    i        exit
+bind browser    l        select-entry
 # 查看附件时
-bind attach i exit
-bind attach <space> view-attach
+bind attach     i        exit
