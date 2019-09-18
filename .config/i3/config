@@ -66,7 +66,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -202,12 +202,12 @@ for_window [class="Viewnior"] floating enable
 bindsym $mod+F12 exec --no-startup-id /usr/bin/i3lock-fancy
 
 #Screencuts
-# bindsym --release $mod+Shift+z exec "sh ~/.config/i3/screencut/cut_sel.sh"
 bindsym --release $mod+Shift+z exec "sh ~/.config/i3/screencut/deepin_screenshot.sh"
 
 # copyq
-bindsym --release $mod+c exec "copyq show"
+bindsym --release $mod+s exec "copyq show"
 bindsym --release $mod+p exec "copyq paste"
+bindsym --release $mod+c exec "copyq copy TEXT"
 
 # fzf-url
 bindsym --release $mod+u exec "fzf-url"
