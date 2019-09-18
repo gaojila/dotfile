@@ -7,7 +7,7 @@ if dein#tap('denite.nvim')
         noremap zT :<C-u>call <SID>my_denite_file_rec_goroot()<CR>
 
         nnoremap <silent> <Leader>gl :<C-u>Denite gitlog:all<CR>
-	    nnoremap <silent> <Leader>gh :<C-u>Denite gitbranch<CR>
+        nnoremap <silent> <Leader>gh :<C-u>Denite gitbranch<CR>
         function! s:my_denite_outline(filetype) abort
         execute 'Denite' a:filetype ==# 'go' ? "decls:'%:p'" : 'outline'
         endfunction
@@ -311,4 +311,11 @@ if dein#tap('vim-textobj-multiblock')
 	omap <silent> ib <Plug>(textobj-multiblock-i)
 	xmap <silent> ab <Plug>(textobj-multiblock-a)
 	xmap <silent> ib <Plug>(textobj-multiblock-i)
+endif
+
+" copyright
+if dein#tap('vim-copyright')
+    let g:file_copyright_name = "luwenzheng"
+    let g:file_copyright_email = "redgaojila@gmail.com"
+    let g:file_copyright_auto_filetypes = ['sh','python']
 endif

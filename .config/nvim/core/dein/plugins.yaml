@@ -2,6 +2,11 @@
 # see http://genkisugimoto.com/blog/manage-vim-plugins-via-yaml/
 
 # StartUp Plugins{{{
+- repo: christoomey/vim-tmux-navigator
+  hook_add: |
+        let g:tmux_navigator_no_mappings = 1
+        let g:tmux_navigator_save_on_switch = 2
+        let g:tmux_navigator_disable_when_zoomed = 1
 - repo: Shougo/dein.vim
 - repo: honza/vim-snippets
 - repo: taigacute/spaceline.vim
@@ -185,6 +190,8 @@
 # }}}
 
 # Coding{{{
+- repo: nine2/vim-copyright
+
 - repo: tyru/caw.vim
   on_map: { nx: <Plug> }
 
@@ -233,6 +240,7 @@
 # }}}
 
 # Writing{{{
+- repo: dhruvasagar/vim-table-mode
 - repo: iamcco/markdown-preview.nvim
   on_ft: [markdown,pandoc.markdown,rmd]
   hook_post_source: 'call mkdp#util#install()'
