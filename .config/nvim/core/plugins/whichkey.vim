@@ -1,6 +1,6 @@
 let g:which_key_map =  {}
 let g:which_key_map = {
-      \ 'name' : '+ThinkVim root ' ,
+      \ 'name' : '+GaojilaVim root ' ,
       \ '1' : 'select window-1'      ,
       \ '2' : 'select window-2'      ,
       \ '3' : 'select window-3'      ,
@@ -10,7 +10,11 @@ let g:which_key_map = {
       \ '7' : 'select window-7'      ,
       \ '8' : 'select window-8'      ,
       \ '9' : 'select window-9'      ,
-      \ '0' : 'select window-10'      ,
+      \ '0' : 'select window-10'     ,
+      \ 'k' : 'up (horizontal)',
+      \ 'j' : 'down (horizontal)',
+      \ 'h' : 'left (horizontal)',
+      \ 'l' : 'right (horizontal)',
       \ 'a' : {
             \ 'name' : '+coc-code-action',
             \ 'c' : 'code action',
@@ -65,16 +69,18 @@ let g:which_key_map = {
               \ 'g'    : 'coc Gitstatus',
               \ 'f'    : 'coc Format',
               \ 'm'    : 'coc search word to multiple cursors',
+              \ 'y'    : 'coc yank history',
               \ },
       \ 'q' : {
             \ 'name' : '+coc-quickfix',
             \ 'f' : 'coc fixcurrent',
             \ },
       \ 't' : {
-            \ 'name' : '+tab-operate',
+            \ 'name' : '+tab-operate or table-mode',
+            \ 'm' : 'table mode',
             \ 'n' : 'new tab',
             \ 'e' : 'edit tab',
-            \ 'm' : 'move tab',
+            \ 'o' : 'move tab',
             \ },
       \ }
 let g:which_key_map[' '] = {

@@ -240,6 +240,7 @@
 # }}}
 
 # Writing{{{
+- repo: tpope/vim-surround # ysiw,cs,yss,ds
 - repo: dhruvasagar/vim-table-mode
 - repo: iamcco/markdown-preview.nvim
   on_ft: [markdown,pandoc.markdown,rmd]

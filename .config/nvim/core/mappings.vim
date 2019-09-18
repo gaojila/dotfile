@@ -51,7 +51,8 @@ noremap <leader>tm :tabmove
 
 "buffer
 nnoremap <leader>bc :BufOnly<CR>
-nnoremap <Leader>bo :BufOnly 
+nnoremap <Leader>bo :BufOnly
+
 "yank to end
 nnoremap Y y$
 
@@ -94,4 +95,14 @@ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c->  :TmuxNavigatePrevious<cr>
 
 " vim-table-mode
-map <LEADER>tm :TableModeToggle<CR>
+nnoremap <leader>tm :TableModeToggle<CR>
+nnoremap <leader><leader> <Esc>/<++><CR>:nohlsearch<CR>c4i
+
+" split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
+noremap <leader>k :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
+noremap <leader>j :set splitbelow<CR>:split<CR>
+noremap <leader>h :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
+noremap <leader>l :set splitright<CR>:vsplit<CR>
+
+" Get yank history list
+nnoremap <silent> <leader>cy  :<C-u>CocList -A --normal yank<cr>
