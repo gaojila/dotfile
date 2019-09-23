@@ -78,6 +78,7 @@ endif
 
 call etc#init()
 call etc#util#source_file('core/plugins/allkey.vim')
+call etc#util#source_file('core/snippits.vim')
 call etc#util#source_file('core/general.vim')
 call etc#util#source_file('core/filetype.vim')
 call etc#util#source_file('core/mappings.vim')
@@ -125,5 +126,6 @@ endif
 
 
 set secure
+set ma
 
 " vim: set ts=2 sw=2 tw=80 noet :
