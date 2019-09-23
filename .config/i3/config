@@ -80,8 +80,12 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # switch to workspace
+bindsym $mod+p workspace next
+bindsym $mod+n workspace prev
+
+# switch to workspace
 bindsym $mod+1 workspace 1:
-bindsym $mod+2 workspace 2: 
+bindsym $mod+2 workspace 2:
 bindsym $mod+3 workspace 3:
 bindsym $mod+4 workspace 4:
 bindsym $mod+5 workspace 5:
@@ -106,7 +110,7 @@ bindsym $mod+Shift+0 move container to workspace 10:
 new_window none
 bindsym $mod+t border normal
 bindsym $mod+y border 1pixel
-# bindsym $mod+u border none
+bindsym $mod+u border none
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -206,8 +210,5 @@ bindsym --release $mod+Shift+z exec "sh ~/.config/i3/screencut/deepin_screenshot
 
 # copyq
 bindsym --release $mod+s exec "copyq show"
-bindsym --release $mod+p exec "copyq paste"
+bindsym --release $mod+v exec "copyq paste"
 bindsym --release $mod+c exec "copyq copy TEXT"
-
-# fzf-url
-bindsym --release $mod+u exec "fzf-url"
