@@ -41,8 +41,8 @@ let s:menus.config.file_candidates = [
   \   ['🐠 Tmux Configurationfile           🔸', '~/.tmux.conf'],
   \ ]
 
-let s:menus.thinkvim = {'description': '💎 ThinkVim Configuration files'}
-let s:menus.thinkvim.file_candidates = [
+let s:menus.gaojila = {'description': '💎 GaoJila Configuration files'}
+let s:menus.gaojila.file_candidates = [
   \   ['🐠 MainVimrc          settings: vimrc               🔹', $VIMPATH.'/core/vimrc'],
   \   ['🐠 Initial            settings: init.vim            🔹', $VIMPATH.'/core/init.vim'],
   \   ['🐠 General            settings: general.vim         🔹', $VIMPATH.'/core/general.vim'],
