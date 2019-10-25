@@ -79,7 +79,6 @@ function global_config() {
     ln -sf ~/dotfile/.zshrc ~/.zshrc
     ln -sf ~/dotfile/.conkyi3 ~/.conkyi3
     ln -sf ~/dotfile/.conkyrc ~/.conkyrc
-    ln -sf ~/dotfile/.tmux ~/.tmux
     ln -sf ~/dotfile/.tmux.config ~/.tmux.config
     sudo ln -sf ~/dotfile/etc/supervisor /etc/
 }
