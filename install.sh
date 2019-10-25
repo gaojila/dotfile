@@ -17,7 +17,7 @@ function ubuntu_install() {
     # 基础软件安装
     sudo apt install -y i3
     sudo apt install -y ranger
-    sudo apt install -y nvim
+    sudo apt install -y neovim
     sudo apt install -y neomutt
     sudo apt install -y git
     sudo apt install -y conky
@@ -43,7 +43,7 @@ function suse_install() {
     # 基础软件安装
     sudo zypper install -y i3
     sudo zypper install -y ranger
-    sudo zypper install -y nvim
+    sudo zypper install -y neovim
     sudo zypper install -y neomutt
     sudo zypper install -y git
     sudo zypper install -y conky
