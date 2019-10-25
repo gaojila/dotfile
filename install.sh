@@ -66,6 +66,8 @@ function suse_install() {
 }
 
 function global_config() {
+    sudo wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.otf /usr/share/fonts/
+    sudo wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf /usr/share/fonts/
     ln -s ~/dotfile/.config/ranger ~/.config/
     ln -sf ~/dotfile/.config/mpd ~/.config/
     ln -sf ~/dotfile/.config/alacritty ~/.config/
