@@ -67,6 +67,7 @@ function suse_install() {
 }
 
 function global_config() {
+    ln -s ./.config/ranger ~/.config/
     ln -sf ./.config/mpd ~/.config/
     ln -sf ./.config/alacritty ~/.config/
     ln -sf ./.config/neomutt ~/.config/
@@ -86,9 +87,11 @@ function global_config() {
 case $DISTRO in
     Ubuntu )
         ubuntu_install
+        global_config
         ;;
     openSUSE* )
         suse_install
+        global_config
         ;;
 esac
 
