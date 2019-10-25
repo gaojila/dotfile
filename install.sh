@@ -27,6 +27,7 @@ function ubuntu_install() {
     sudo apt install -y mpd
     sudo apt install -y tmux
     sudo apt install -y autojump
+    sudo apt install -y supervisor
 
     # zsh
     sudo chsh luwenzheng -s /bin/zsh
@@ -34,9 +35,6 @@ function ubuntu_install() {
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
     git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
     git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
-
-    # tmux
-    git clone https://github.com/gpakosz/.tmux.git
 }
 
 function suse_install() {
@@ -53,6 +51,7 @@ function suse_install() {
     sudo zypper install -y mpd
     sudo zypper install -y tmux
     sudo zypper install -y autojump
+    sudo zypper install -y supervisor
 
     # zsh
     sudo chsh luwenzheng -s /bin/zsh
@@ -60,9 +59,6 @@ function suse_install() {
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
     git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
     git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
-
-    # tmux
-    git clone https://github.com/gpakosz/.tmux.git
 }
 
 function global_config() {
@@ -81,7 +77,9 @@ function global_config() {
     ln -sf ~/dotfile/.zshrc ~/.zshrc
     ln -sf ~/dotfile/.conkyi3 ~/.conkyi3
     ln -sf ~/dotfile/.conkyrc ~/.conkyrc
-    ln -sf ~/dotfile/.tmux.config ~/.tmux.config
+    ln -sf ~/dotfile/.tmux ~/.tmux
+    ln -sf ~/dotfile/.tmux/.tmux.conf ~/.tmux.conf
+    ln -sf ~/dotfile/.tmux/.tmux.conf.local ~/.tmux.conf.local
     sudo ln -sf ~/dotfile/etc/supervisor /etc/
 }
 
