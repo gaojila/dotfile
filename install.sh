@@ -12,7 +12,6 @@
 
 DISTRO=$(head -n 1 /etc/os-release | awk -F = '{print$2}' | sed 's@"@@g')
 
-
 function ubuntu_install() {
     # 基础软件安装
     sudo apt install -y i3
@@ -34,6 +33,7 @@ function ubuntu_install() {
     sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
     git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
+    git clone https://github.com/paulirish/git-open.git ~/.oh-my-zsh/plugins/git-open
     git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
 }
 
@@ -58,6 +58,7 @@ function suse_install() {
     sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
     git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
+    git clone https://github.com/paulirish/git-open.git ~/.oh-my-zsh/plugins/git-open
     git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
 }
 
@@ -81,6 +82,7 @@ function global_config() {
     ln -sf ~/dotfile/.tmux/.tmux.conf ~/.tmux.conf
     ln -sf ~/dotfile/.tmux/.tmux.conf.local ~/.tmux.conf.local
     sudo ln -sf ~/dotfile/etc/supervisor /etc/
+    sudo ln -sf ~/dotfile/davmail ~/opt/
 }
 
 case $DISTRO in
