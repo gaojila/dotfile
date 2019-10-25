@@ -27,6 +27,9 @@ function ubuntu_install() {
     sudo apt install -y tmux
     sudo apt install -y autojump
     sudo apt install -y supervisor
+    sudo apt install -y fetchmail
+    sudo apt install -y procmail
+    sudo apt install -y msmtp
 
     # zsh
     sudo chsh luwenzheng -s /bin/zsh
@@ -35,6 +38,12 @@ function ubuntu_install() {
     git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
     git clone https://github.com/paulirish/git-open.git ~/.oh-my-zsh/plugins/git-open
     git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
+
+    # neomutt
+    sudo ln -sf ~/dotfile/etc/supervisor/conf.d/davmail.conf /etc/supervisor/conf.d/
+    sudo ln -sf ~/dotfile/etc/davmail.properties /etc/
+    sudo ln -sf ~/dotfile/davmail /opt/
+    systemctl restart supervisord.service
 }
 
 function suse_install() {
@@ -52,6 +61,9 @@ function suse_install() {
     sudo zypper install -y tmux
     sudo zypper install -y autojump
     sudo zypper install -y supervisor
+    sudo zypper install -y fetchmail
+    sudo zypper install -y procmail
+    sudo zypper install -y msmtp
 
     # zsh
     sudo chsh luwenzheng -s /bin/zsh
@@ -60,6 +72,12 @@ function suse_install() {
     git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
     git clone https://github.com/paulirish/git-open.git ~/.oh-my-zsh/plugins/git-open
     git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
+
+    # neomutt
+    sudo ln -sf ~/dotfile/etc/supervisor/conf.d/davmail.conf /etc/supervisor.d/
+    sudo ln -sf ~/dotfile/etc/davmail.properties /etc/
+    sudo ln -sf ~/dotfile/davmail /opt/
+    systemctl restart supervisord.service
 }
 
 function global_config() {
@@ -81,9 +99,10 @@ function global_config() {
     ln -sf ~/dotfile/.tmux ~/.tmux
     ln -sf ~/dotfile/.tmux/.tmux.conf ~/.tmux.conf
     ln -sf ~/dotfile/.tmux/.tmux.conf.local ~/.tmux.conf.local
-    sudo ln -sf ~/dotfile/etc/supervisor /etc/
-    sudo ln -sf ~/dotfile/etc/davmail.properties /etc/
-    sudo ln -sf ~/dotfile/davmail /opt/
+    ln -sf ~/dotfile/.mailcap ~/.mailcap
+    ln -sf ~/dotfile/.fetchmailrc ~/.fetchmailrc
+    ln -sf ~/dotfile/.msmtprc ~/.msmtprc
+    ln -sf ~/dotfile/.procmailrc ~/.procmailrc
 }
 
 case $DISTRO in
