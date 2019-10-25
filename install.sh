@@ -83,7 +83,7 @@ function global_config() {
     ln -sf ~/dotfile/.tmux/.tmux.conf.local ~/.tmux.conf.local
     sudo ln -sf ~/dotfile/etc/supervisor /etc/
     sudo ln -sf ~/dotfile/etc/davmail.properties /etc/
-    sudo ln -sf ~/dotfile/davmail ~/opt/
+    sudo ln -sf ~/dotfile/davmail /opt/
 }
 
 case $DISTRO in
