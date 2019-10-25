@@ -67,21 +67,21 @@ function suse_install() {
 }
 
 function global_config() {
-    ln -s ./.config/ranger ~/.config/
-    ln -sf ./.config/mpd ~/.config/
-    ln -sf ./.config/alacritty ~/.config/
-    ln -sf ./.config/neomutt ~/.config/
-    ln -sf ./.config/nvim ~/.config/
-    ln -sf ./.config/i3 ~/.config/
-    ln -sf ./.config/rofi-power ~/.config/
-    ln -sf ./.config/compton ~/.config/
-    ln -sf ./.zsh ~/.zsh
-    ln -sf ./.zshrc ~/.zshrc
-    ln -sf ./.conkyi3 ~/.conkyi3
-    ln -sf ./.conkyrc ~/.conkyrc
-    ln -sf ./.tmux ~/.tmux
-    ln -sf ./.tmux.config ~/.tmux.config
-    sudo ln -sf ./etc/supervisor /etc/
+    ln -s ~/dotfile/.config/ranger ~/.config/
+    ln -sf ~/dotfile/.config/mpd ~/.config/
+    ln -sf ~/dotfile/.config/alacritty ~/.config/
+    ln -sf ~/dotfile/.config/neomutt ~/.config/
+    ln -sf ~/dotfile/.config/nvim ~/.config/
+    ln -sf ~/dotfile/.config/i3 ~/.config/
+    ln -sf ~/dotfile/.config/rofi-power ~/.config/
+    ln -sf ~/dotfile/.config/compton ~/.config/
+    ln -sf ~/dotfile/.zsh ~/.zsh
+    ln -sf ~/dotfile/.zshrc ~/.zshrc
+    ln -sf ~/dotfile/.conkyi3 ~/.conkyi3
+    ln -sf ~/dotfile/.conkyrc ~/.conkyrc
+    ln -sf ~/dotfile/.tmux ~/.tmux
+    ln -sf ~/dotfile/.tmux.config ~/.tmux.config
+    sudo ln -sf ~/dotfile/etc/supervisor /etc/
 }
 
 case $DISTRO in
