@@ -153,6 +153,6 @@ set reply_regexp="^(re([\\[0-9\\]+])*|回复|答复|aw|fw):[ \t]*"
 set strict_threads=yes
 
 # 定义自个人主题
-source powerline/powerline.neomuttrc
-source powerline/colors/muttrc.narksuckersperg
+source themes/powerline.neomuttrc
+source themes/colors/muttrc.narksuckersperg
 
