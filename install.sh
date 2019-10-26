@@ -74,7 +74,7 @@ function suse_install() {
     git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
 
     # neomutt
-    sudo ln -sf ~/dotfile/etc/supervisor/conf.d/davmail.conf /etc/supervisor.d/
+    sudo ln -sf ~/dotfile/etc/supervisor/conf.d/davmail.conf /etc/supervisord.d/
     sudo ln -sf ~/dotfile/etc/davmail.properties /etc/
     sudo ln -sf ~/dotfile/davmail /opt/
     systemctl restart supervisord.service
