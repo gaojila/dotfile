@@ -11,3 +11,5 @@ source $ZSH/oh-my-zsh.sh
 
 # bindings
 bindkey ';' autosuggest-accept
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

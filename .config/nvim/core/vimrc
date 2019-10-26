@@ -126,6 +126,6 @@ endif
 
 
 set secure
-set ma
+set modifiable
 
 " vim: set ts=2 sw=2 tw=80 noet :

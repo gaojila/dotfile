@@ -1,0 +1,50 @@
+# NARKSUCKERSPERG - A Mutt theme inspired by...
+# OX
+
+color error         color229            default
+color normal	    default               default
+color status        default            default
+color indicator     brightcolor5        default
+color tree          color06             default
+color attachment    color6              default
+
+
+
+color search        brightcolor138      color03
+color quoted        color39             default
+color quoted1       color165            default
+color quoted2       color39             default
+color quoted3       color22             default
+color quoted4       color166            default
+color signature     color81             default
+color bold          color255            default
+color underline     color233            default
+
+
+color header        brightcolor06       default  'From:'
+color header        brightcolor06       default  '^to:'
+color header        brightcolor06       default  '^cc:'
+color header        brightcolor06       default  '^date:'
+color header        brightcolor06       default  '^subject:'
+
+color body          color06             default  [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color body          color04             default  (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+
+color progress      white               color60
+
+
+# 特殊状态
+color index         color8              default   "!(~d `date +'%d/%m' -d '3 days ago'`-)"
+color index         color32             default   "~y \\\\bvi\\\\b"  # very important (word only)
+color index         black               default   "~Q"  # 我回复过的邮件(~Q)
+color index         black               color255  "~T"  # 选中
+color index         white               color234  "~F"  # 标记
+color index         color7              color255  "~D"  # 删除
+color index         color205            default   "~y todo"
+color index         brightcolor02       default   '~N'     # new
+color index_author  color03             default   '~F'     # flags
+color index         default             color236  '~l'     # mailing list
+color index_author  default             color236  '~l'     # mailing list
+color index_flags   color06             default	  '%A'
+
+# vim: syntax=neomuttrc textwidth=100

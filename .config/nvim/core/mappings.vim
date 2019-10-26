@@ -18,8 +18,8 @@ imap <C-q> <esc>:wq<CR>
 inoremap <C-o> <Esc>o
 
 " buffer select
-nnoremap  <C-p> :bp<CR>
-nnoremap  <C-n> :bn<CR>
+nnoremap  <C-n> :bp<CR>
+nnoremap  <C-p> :bn<CR>
 
 "delete buffer
 nnoremap <C-x>  :bd<CR>
@@ -88,7 +88,7 @@ nnoremap <silent> <c->  :TmuxNavigatePrevious<cr>
 
 " vim-table-mode
 nnoremap <leader>tm :TableModeToggle<CR>
-nnoremap <leader><leader> <Esc>/<++><CR>:nohlsearch<CR>c4i
+" nnoremap <leader><leader> <Esc>/<++><CR>:nohlsearch<CR>c4i
 
 " split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
 noremap <leader>k :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>

@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/home/luwenzheng/dotfile/.config/nvim/autoload/etc'
+let g:netrw_dirhist_2='/opt/blog/source/_posts/ldap搜索'
+let g:netrw_dirhist_3='/home/luwenzheng/dotfile/.config/neomutt/powerline/colors'

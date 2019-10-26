@@ -1,0 +1,55 @@
+# 自定义界面颜色
+# --   --        前景色      背景色
+color indicator  default     color230 # 当前行
+color normal     default     default  # 普通文字
+color status     default     default  # 状态栏
+color tree       default     default  # 线索
+color tilde      default     default  # 信件末尾后终端最下方的留白
+color attachment color8      color7   # 附件
+color message    black       default  # 提示信息
+color quoted     black       color252 # 引用
+color quoted1    black       color251 # 引用
+color quoted2    black       color249 # 引用
+color quoted3    black       color248 # 引用
+color hdrdefault black       default  # 信头
+color signature  color250    default  # 签名
+
+# 重要程度评分
+color index      black       default   "~n 2-"
+color index      black       color252  "~n 3-"
+color index      black       color249  "~n 4-"
+color index      black       color246  "~n 5-"
+color index      white       color243  "~n 6-"
+color index      white       color240  "~n 7-"
+color index      white       color237  "~n 8-"
+color index      white       color234  "~n 9-"
+color index      white       black     "~n 10-"
+
+# 特殊状态
+color index      color8      default   "!(~d `date +'%d/%m' -d '3 days ago'`-)"
+color index      color32     default   "~y \\\\bvi\\\\b"  # very important (word only)
+color index      black       default   "~Q"  # 我回复过的邮件(~Q)
+color index      black       color255  "~T"  # 选中
+color index      white       color234  "~F"  # 标记
+color index      color7      color255  "~D"  # 删除
+color index      color205    default   "~y todo"
+
+# 特殊邮件头
+color header     black       color7    "^X-Label:"
+color header     color8      color7    "^X-Mailer:"
+color header     color8      color7    "^User-Agent:"
+
+# 清空内容高亮
+uncolor body *
+
+# 高亮gpg签名
+color body       red         black     "^(gpg: )?Bad signature"
+color body       red         black     "^(gpg: )?warning"
+
+# 关键内容高亮
+color body       black       color228  "英(语|語|文)"
+color body       black       color153  "(PCL|CRM).{3,4}(各位|全体|组|チーム)"
+color body       black       color225  ""
+color body       black       color114  ""
+color body       black       color116  ""
+

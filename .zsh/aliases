@@ -1,3 +1,5 @@
 alias vi='nvim'
 alias ra='ranger'
 alias fu='fzf-url'
+alias sc='setxkbmap -option "ctrl:swapcaps"'
+alias so='setxkbmap -option'
